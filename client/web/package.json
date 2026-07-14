@@ -5,12 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.0",
-    "@esbuild/win32-x64": "^0.28.1",
     "antd": "^5.29.3",
     "axios": "^1.6.0",
     "dayjs": "^1.11.10",
