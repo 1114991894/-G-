@@ -1,0 +1,54 @@
+{
+  "clients": [
+    {
+      "id": "client_1783334360560",
+      "name": "肾小友",
+      "contactName": "刘春",
+      "phone": "15158195310",
+      "password": "123456",
+      "status": "assigned",
+      "employeeCount": 10,
+      "employeeEnabledCount": 0,
+      "employeeDisabledCount": 10,
+      "createdAt": "2026-7-6 18:39:20",
+      "province": "zhejiang",
+      "city": "hangzhou",
+      "scale": "10",
+      "assignedTo": "1783310145045",
+      "assignedToName": "刘知行 (主管理员)",
+      "expireDate": "2026/7/6-2027/7/7",
+      "lastLogin": "-",
+      "healthScore": 100,
+      "role": "super_admin",
+      "assignedAt": "2026-7-6 18:52:36"
+    }
+  ],
+  "trial_applications": [
+    {
+      "companyName": "肾小友",
+      "contactName": "刘春",
+      "phone": "15158195310",
+      "employeeCount": "10",
+      "region": "浙江省",
+      "id": "trial_1783333722607",
+      "ticketNo": "TRIAL202607065979",
+      "status": "approved",
+      "submittedAt": "2026-7-6 18:28:42",
+      "reviewedAt": "2026-7-6 18:39:20"
+    }
+  ],
+  "server_admins": [],
+  "server_notifications": [
+    {
+      "id": "notif_1783333722650",
+      "type": "trial",
+      "title": "新的试用申请",
+      "content": "肾小友 提交了试用申请",
+      "read": true,
+      "createdAt": "2026-7-6 18:28:42",
+      "data": {
+        "trialId": "trial_1783333722607"
+      }
+    }
+  ]
+}
