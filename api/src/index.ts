@@ -64,23 +64,26 @@ app.use((req: Request, _res: Response, next: NextFunction) => {
 });
 
 // 数据库连接
-const sequelize = new Sequelize({
-  host: process.env.DB_HOST || 'localhost',
-  port: parseInt(process.env.DB_PORT || '3306'),
-  database: process.env.DB_NAME || 'bwg_performance',
-  username: process.env.DB_USER || 'root',
-  password: process.env.DB_PASS || '',
-  dialect: 'mysql',
-  charset: 'utf8mb4',
-  collate: 'utf8mb4_unicode_ci',
-  logging: (msg) => logger.debug(msg),
-  pool: {
-    max: 10,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
+const sequelize = new Sequelize(
+  process.env.DB_NAME || 'bwg_performance',
+  process.env.DB_USER || 'root',
+  process.env.DB_PASS || '',
+  {
+    host: process.env.DB_HOST || 'localhost',
+    port: parseInt(process.env.DB_PORT || '3306'),
+    dialect: 'mysql',
+    dialectOptions: {
+      charset: 'utf8mb4'
+    },
+    logging: (msg: string) => logger.debug(msg),
+    pool: {
+      max: 10,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
   }
-});
+);
 
 // 测试数据库连接
 sequelize.authenticate()
@@ -106,6 +109,7 @@ import talentRoutes from './routes/talent.routes';
 import notificationRoutes from './routes/notification.routes';
 import oauthRoutes from './routes/oauth.routes';
 import integrationRoutes from './routes/integration.routes';
+import sharedRoutes from './routes/shared.routes';
 
 // 注意：oauthRoutes 必须在 authRoutes 之前注册
 // 因为 authRoutes 会匹配 /api/v1/auth/* 下的所有请求

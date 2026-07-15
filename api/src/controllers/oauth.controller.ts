@@ -126,6 +126,14 @@ export class OAuthController {
         } as any;
       }
 
+      if (!tenant) {
+        res.status(404).json({
+          success: false,
+          message: '企业不存在'
+        });
+        return;
+      }
+
       const settings = tenant.settings || {};
       const integration = settings.integration || {};
       const platformConfig = integration[platform as string];
